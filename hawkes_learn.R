@@ -15,13 +15,6 @@ estimate_Nt = function(params, l0, t){
   
   estimate_Nt = (l0 / (a - b) + b * mu / (a - b) ** 2) * exp((a - b) * t) - (b * mu / (a - b)) * t - (l0 / (a - b) + b * mu / (a - b) ** 2)
   
-  A = (mu * (a ** 2 + 2 * b * mu) - 2 * mu * a * (a - b)) / (2 * (a - b) ** 2)
-  B = (mu * (a ** 2 + 2 * b * mu) + 2 * mu * a * (a - b)) / (2 * (a - b) ** 2)
-  C = (mu * b * mu) / (a - b) ** 2
-  estimate_Nt2 = B / (2 * (a - b)) * exp(2 * (a - b) * t) - 2 * (A + B - C) / (a - b) * exp((a - b) * t)
-  - C * (a - b) * t ** 2 + (mu + 2 * A + 2 * C) * t
-  + (4 * A + 3 * B - 4 * C) / (2 * (a - b))
-  
   return (estimate_Nt)
 }
 
